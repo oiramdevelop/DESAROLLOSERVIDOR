@@ -3,7 +3,6 @@ public class Condicionales {
         int edad = 18;
         String marca = "Peugeout";
         float potencia= 135.5f;
-       
 
         //Solo podra conducir si es mayor de edad y el coche tiene menos de 140 cv  de potencia
         if (edad >= 18 && potencia < 140) {
