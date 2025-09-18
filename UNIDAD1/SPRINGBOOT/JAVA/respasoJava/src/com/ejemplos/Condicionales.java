@@ -1,3 +1,4 @@
+package com.ejemplos;
 public class Condicionales {
     public static void main(String[] args) throws Exception {
         int edad = 18;
@@ -12,7 +13,8 @@ public class Condicionales {
         } else {
             System.out.println("Tu coche es muy potente, no puedes conducir");
 
-        }
+        } 
+        System.out.println("Fin del programa");
 
     }
 }
