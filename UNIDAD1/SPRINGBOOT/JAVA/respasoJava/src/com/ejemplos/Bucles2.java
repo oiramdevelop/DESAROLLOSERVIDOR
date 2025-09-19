@@ -1,33 +1,55 @@
 package com.ejemplos;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Bucles2 {
     
     public static void main(String[] args) {
+     
+
+        //Ahora con un bucle for recoremos un arraylist de String y
+        // mostramos las que contengga la letra p y tengan alguna letra en posicion simetrica
+
+
+        ArrayList<String> palabras = new ArrayList<>();
         Scanner teclado = new Scanner(System.in);
-        int numPal = 0;
-        String palabra;
+        System.out.print("¿Cuántas palabras quieres introducir? ");
+        int n = teclado.nextInt();
+        teclado.nextLine(); // Limpiar buffer
 
-        System.out.print("Numero de la palabra a leer");
-        numPal  = teclado.nextInt();
-
-        System.out.println("Palabra 1:");
-        palabra = teclado.nextLine();
-        int i = 2;
-
-        while (numPal!=0 && !palabra.equalsIgnoreCase("fin")) {
-
-            //si tiene mas de 6 letras y empieza por A
-            if(palabra.length()>=6 && (palabra.toUpperCase().charAt(0)=='A')){
-                System.out.println(palabra);
-            }
-         //leemos la siguiente palabra 
-        System.out.println("Palabra " + i + ":" );
-        palabra = teclado.nextLine();
-        i++;
-        numPal--;   
+        for (int f = 0; f < n; f++) {
+            System.out.print("Introduce una palabra: ");
+            String palabraArray = teclado.nextLine();
+            palabras.add(palabraArray);
         }
+
+        System.out.println("Palabras introducidas: " + palabras);
+        teclado.close();
+
+        for (String palabra : palabras) {
+            if (palabra.contains("p")) {
+                int len = palabra.length();
+                boolean simetrica = false;
+                for (int i = 0; i < len / 2; i++) {
+                    if (palabra.charAt(i) == palabra.charAt(len - 1 - i)) {
+                        simetrica = true;
+                        break;
+                    }
+                }
+                if (simetrica) {
+                    System.out.println(palabra + " contiene 'p' y tiene letras en posiciones simétricas.");
+                } else {
+                    System.out.println(palabra + " contiene 'p' pero no tiene letras en posiciones simétricas.");
+                }
+            } else {
+                System.out.println(palabra + " no contiene 'p'.");
+            }
+        }
+
+/*
+ * for (int i = 0; i < palabras.size(); i++) {
+ */
 
     }
 }
