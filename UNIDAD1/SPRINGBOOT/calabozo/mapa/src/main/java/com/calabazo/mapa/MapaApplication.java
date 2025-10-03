@@ -8,7 +8,6 @@ public class MapaApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MapaApplication.class, args);
-		
 	}
 
 }
